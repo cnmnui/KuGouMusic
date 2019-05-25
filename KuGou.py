@@ -2,7 +2,7 @@
 import scrapy
 from urllib.parse import urlencode
 import sys
-sys.path.append('C:/code/test/KuGouMusic/KuGouMusic')
+sys.path.append('你的路径')
 from KuGouMusic.items import KugoumusicItem
 import time
 import json
@@ -79,6 +79,7 @@ class KugouSpider(scrapy.Spider):
         self.item['audio_id'] = song_info['data']['audio_id']
         song_link = song_info['data']['play_url']
         self.item['author_name'] = song_info['data']['author_name']
+        # 歌曲的存放路径
         file_path = 'C:/music/' + self.item['author_name'] + '/'
         if not os.path.exists(file_path):
             os.mkdir(file_path)
