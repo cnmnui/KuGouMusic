@@ -5,7 +5,9 @@ import base64
 
 
 class RandomUserAgentMiddleware(object):
-     # 随机更换user-agent
+     """
+     随机useragent
+     """
     def __init__(self, crawler):
         super().__init__()
         self.ua = UserAgent()
@@ -19,10 +21,9 @@ class RandomUserAgentMiddleware(object):
 
 
 class ProxyMiddleware(object):
-    # overwrite process request
     def process_request(self, request, spider):
         # 设置代理的主机和端口号
-        request.meta['proxy'] = "http://proxy.internal.server.com:8080"
+        request.meta['proxy'] = "http://proxyip:0000"
 
         # 设置代理的认证用户名和密码
         proxy_user_pass = "user:password"
