@@ -66,7 +66,6 @@ DOWNLOADER_MIDDLEWARES = {
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
    'KuGouMusic.pipelines.KuGouMusicPipeline': 300,
-   # 'KuGouMusic.pipelines.ToMysqlPipeline': 301,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
