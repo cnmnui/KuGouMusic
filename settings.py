@@ -91,8 +91,8 @@ ITEM_PIPELINES = {
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
 MYSQL_HOST = "localhost"
-MYSQL_DBNAME = "kugou"
-MYSQL_USER = "root"
-MYSQL_PASSWORD = "12358"
-MYSQL_TABLE = "music"
+MYSQL_DBNAME = "database"
+MYSQL_USER = "username"
+MYSQL_PASSWORD = "password"
+MYSQL_TABLE = "table"
 
