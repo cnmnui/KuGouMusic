@@ -54,6 +54,7 @@ DEFAULT_REQUEST_HEADERS = {
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
    'KuGouMusic.middlewares.RandomUserAgentMiddleware': 543,
+   'KuGouMusic.middlewares.ProxyMiddleware': 543,
 }
 
 # Enable or disable extensions
