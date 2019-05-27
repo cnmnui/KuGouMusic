@@ -65,6 +65,7 @@ class KugouSpider(scrapy.Spider):
                 'platid': '4',
                 '_': self.k_time
             }
+            # 如果Privilege值为10，则为收费歌曲
             if k_Privilege != 10:
                 song_url = song_base_url + urlencode(data)
                 yield scrapy.Request(song_url, callback=self.parse_song_list)
