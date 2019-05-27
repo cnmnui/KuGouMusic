@@ -37,25 +37,31 @@ class KuGouMusicPipeline(object):
             conn.close()
             
             
+# # 保存歌曲文件
 # class KuGouMusicPipeline(object):
-#     # 保存歌曲到本地文件
 #     def process_item(self, item, spider):
-#         with open(item['song_path'], 'wb') as f:
-#                 f.write(item['song'])
-            
-           
+#         with open(item['song_path'], 'wb') as k_f:
+#                 k_f.write(item['song'])
+
+
 # # 保存到数据库
 # class ToMysqlPipeline(object):
 #     def __init__(self):
-#         self.conn = pymysql.connect("localhost", "root", "12358", "kugou", charset="utf8mb4")
+#         m_host = settings.MYSQL_HOST
+#         m_user = settings.MYSQL_USER
+#         m_psword = settings.MYSQL_PASSWORD
+#         self.m_db = settings.MYSQL_DBNAME
+#         self.m_table = settings.MYSQL_TABLE
+#         self.conn = pymysql.connect(m_host, m_user, m_psword, self.m_db, charset='utf8mb4')
 #         self.cursor = self.conn.cursor()
 
 #     def process_item(self, item, spider):
-#         ins = "insert into kugou.music(audio_id,song_name,author_name,song_path) values(%s,%s,%s,%s)"
+#         ins = "insert into {0}.{1}(audio_id,song_name,author_name,song_path) values(%s,%s,%s,%s)"\
+#             .format(self.m_db, self.m_table)
 #         m_values = (item['audio_id'], item['song_name'], item['author_name'], item['song_path'])
 #         self.cursor.execute(ins, m_values)
-#         massage_s = self.cursor.fetchall()
-#         print(massage_s)
+#         # massage_s = self.cursor.fetchall()
+#         # print(massage_s)
 #         self.conn.commit()
 
 #     def close_mysql(self):
