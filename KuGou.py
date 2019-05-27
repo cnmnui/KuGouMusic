@@ -75,7 +75,7 @@ class KugouSpider(scrapy.Spider):
         """
         response.body.decode('utf-8')
         song_info = json.loads(response.text[16: -2])
-        self.item['song_name'] = song_info['data']['audio_name']
+        self.item['song_name'] = song_info['data']['audio_name'].split('-')[-1][1:]
         self.item['audio_id'] = song_info['data']['audio_id']
         song_link = song_info['data']['play_url']
         self.item['author_name'] = song_info['data']['author_name']
