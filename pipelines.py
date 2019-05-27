@@ -35,3 +35,34 @@ class KuGouMusicPipeline(object):
         finally:
             cursor.close()
             conn.close()
+            
+            
+# class KuGouMusicPipeline(object):
+#     # 保存歌曲到本地文件
+#     def process_item(self, item, spider):
+#         with open(item['song_path'], 'wb') as f:
+#                 f.write(item['song'])
+            
+           
+# # 保存到数据库
+# class ToMysqlPipeline(object):
+#     def __init__(self):
+#         self.conn = pymysql.connect("localhost", "root", "12358", "kugou", charset="utf8mb4")
+#         self.cursor = self.conn.cursor()
+
+#     def process_item(self, item, spider):
+#         ins = "insert into kugou.music(audio_id,song_name,author_name,song_path) values(%s,%s,%s,%s)"
+#         m_values = (item['audio_id'], item['song_name'], item['author_name'], item['song_path'])
+#         self.cursor.execute(ins, m_values)
+#         massage_s = self.cursor.fetchall()
+#         print(massage_s)
+#         self.conn.commit()
+
+#     def close_mysql(self):
+#         self.cursor.close()
+#         self.conn.close()
+            
+            
+            
+            
+        
