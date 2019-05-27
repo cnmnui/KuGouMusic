@@ -17,6 +17,7 @@ class KugouSpider(scrapy.Spider):
     name = 'KuGou'
     allowed_domains = ['kugou.com']
     item = KugoumusicItem()
+    path = 'C:/music/'
     k_num = math.floor(1e16 * random.random())
     search_base_url = "https://songsearch.kugou.com/song_search_v2?"
     k_keyword = '周华健'                              # 搜索关键词
@@ -80,7 +81,7 @@ class KugouSpider(scrapy.Spider):
         song_link = song_info['data']['play_url']
         self.item['author_name'] = song_info['data']['author_name']
         # 歌曲的存放路径
-        file_path = 'C:/music/' + self.item['author_name'] + '/'
+        file_path = self.path + self.item['author_name'] + '/'
         if not os.path.exists(file_path):
             os.mkdir(file_path)
         self.item['song_path'] = file_path + self.item['song_name'] + '.mp3'
